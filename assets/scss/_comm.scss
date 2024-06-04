@@ -1,0 +1,162 @@
+:root {
+    --swiper-theme-color: #36c5f4;
+}
+
+// 사이트의 공통 스타일을 정의합니다.
+
+// x축 그리드 정렬
+// mobile first
+.container {
+    padding: 0 20px;
+    transition: all 0.3s;
+}
+// mobile (480px) 이상일 때
+// tablet (768px) 이상일 때
+@media screen and (min-width: $breakpoint-md) {
+    .container {
+        padding: 0 30px;
+    }
+}
+// laptop (1024px) 이상일 때
+// desktop (1280px) 이상일 때
+@media screen and (min-width: $breakpoint-xl) {
+    .container {
+        max-width: 1340px;
+        margin: 0 auto;
+        padding: 0 30px;
+    }
+}
+.bg-grey {
+    background: #f8f8f8;
+}
+.sec-g {
+    padding: 30px 0;
+}
+
+// swiper
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    display: none;
+}
+@media screen and (min-width: $breakpoint-xl) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: block;
+    }
+}
+
+// 버튼, 라디오 버튼, 체크박스
+// 카드디자인, 리스트 디자인
+// 공통 스타일을 정의
+
+#wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+// header
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    &.active {
+        background: rgba(241, 243, 248, 0.3);
+        backdrop-filter: blur(30px);
+    }
+    .container {
+        @include flexSpaceBetween;
+    }
+    #logo {
+        a {
+            @include flexitems;
+            height: $hdH;
+            font-size: 1.4rem;
+        }
+    }
+}
+@media screen and (min-width: $breakpoint-xl) {
+    #header {
+        position: static;
+    }
+}
+
+#gnb {
+    display: flex;
+    .label-menu {
+        .bar {
+            width: 30px;
+            height: 3px;
+            background: $black;
+            margin: 5px 0;
+            border-radius: 3px;
+        }
+    }
+    .m-util {
+        display: none;
+    }
+    .menu-wrap {
+        display: none;
+    }
+}
+
+// util
+.util {
+    display: none;
+}
+.lang {
+    display: flex;
+    a {
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        height: 90px;
+    }
+}
+.search-area {
+    .layer-search {
+        display: none;
+    }
+}
+// main
+#main {
+    flex: 1;
+}
+
+// section
+.sec-type1 {
+    padding: 50px 0;
+    .sec-title {
+        padding: 30px 0;
+        font-size: 1.875rem;
+        color: $black;
+        text-align: center;
+    }
+}
+
+// footer
+#footer {
+    padding: 20px 0;
+    background: blue;
+}
