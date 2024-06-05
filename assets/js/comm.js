@@ -8,7 +8,7 @@ var swiper = new Swiper('.slide-intro', {
     // },
     pagination: {
         el: '.swiper-pagination',
-        clickable: true,
+        type: 'fraction',
     },
     navigation: {
         nextEl: '.swiper-button-next',
@@ -16,12 +16,13 @@ var swiper = new Swiper('.slide-intro', {
     },
 })
 
-var swiper = new Swiper('.slide-eft', {
+var swiper = new Swiper('.slide-eft .swiper', {
     slidesPerView: 1,
     spaceBetween: 20,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
     breakpoints: {
         768: {
@@ -29,8 +30,8 @@ var swiper = new Swiper('.slide-eft', {
             spaceBetween: 30,
         },
         1280: {
-            slidesPerView: 3,
-            spaceBetween: 30,
+            slidesPerView: 4,
+            spaceBetween: 24,
         },
     },
 })

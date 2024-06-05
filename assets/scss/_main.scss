@@ -35,6 +35,7 @@
     picture {
         position: relative;
         width: 100%;
+        // picture::after {}
         &::after {
             content: '';
             position: absolute;
@@ -48,6 +49,52 @@
     img {
         // height: calc(100vh - $hdH);
         height: 100vh;
+    }
+
+    // arrow
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: auto;
+        left: 50%;
+        bottom: 90px;
+        &:hover {
+            &::before {
+                color: $secondary;
+            }
+        }
+        &::before {
+            font-family: 'Line Awesome Free';
+            font-weight: 900;
+            font-size: 3rem;
+        }
+        &::after {
+            display: none;
+        }
+    }
+    .swiper-button-prev {
+        transform: translateX(-635px);
+        &::before {
+            content: '\f060';
+        }
+    }
+    .swiper-button-next {
+        transform: translateX(-570px);
+        &::before {
+            content: '\f061';
+        }
+    }
+    // pagination
+    .swiper-pagination {
+        width: 70px;
+        top: auto;
+        left: 50%;
+        bottom: 86px;
+        transform: translateX(-500px);
+        color: $primary;
+        font-size: 1.2rem;
+        span {
+            font-weight: bold;
+        }
     }
 }
 @media screen and (min-width: $breakpoint-xl) {
@@ -77,19 +124,45 @@
     overflow: hidden;
 }
 .slide-eft {
-    overflow: visible;
-    width: 85%;
-    margin-left: 0;
-    margin-right: 0;
+    position: relative;
+    .swiper {
+        overflow: visible;
+        width: 85%;
+        margin-left: 0;
+        margin-right: 0;
+    }
     .swiper-slide {
-        height: 500px;
-        background: $primary;
+        height: 400px;
+        background: $gray-300;
         border-radius: 20px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        @include flexCenter;
+        width: 80px;
+        height: 80px;
+        margin: 0;
+        background: rgba($primary, 0.5);
+        transform: translateY(-50%);
+        &::after {
+            transform: scale(0.8);
+        }
+    }
+    .swiper-button-prev {
+        left: -100px;
+    }
+    .swiper-button-next {
+        right: -100px;
     }
 }
 
 @media screen and (min-width: $breakpoint-md) {
-    .slide-eft {
+    .slide-eft .swiper {
         width: 95%;
+    }
+}
+@media screen and (min-width: $breakpoint-xl) {
+    .slide-eft .swiper {
+        width: 100%;
     }
 }

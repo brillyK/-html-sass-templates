@@ -1,10 +1,14 @@
 // 변수 설정
 $txtDefult: #202020;
-$primary: #36c5f4;
+$primary: #445ded;
 $secondary: #ff5722;
 
 $white: #fff;
 $black: #000;
+$blurTxt: rgba($txtDefult, 0.7);
+
+$bgDefult: rgba($primary, 0.05);
+$linkDefult: #666;
 
 $gray-100: #f5f5f5;
 $gray-200: #eeeeee;
@@ -31,5 +35,9 @@ $hdH: 60px;
 @media screen and (min-width: $breakpoint-md) {
     $hdH: 100px;
 }
+
+//laayout
+$hdH: 60px;
+$hdH-xl: 100px;
 
 $ftH: 70px;
