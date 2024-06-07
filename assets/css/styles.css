@@ -212,12 +212,12 @@ input[type=password] {
 .blind,
 caption,
 legend {
-  overflow: hidden;
   position: absolute;
-  width: 0;
-  height: 0;
-  line-height: 0;
-  text-indent: -9999px;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
 }
 
 /* 대체텍스트가 아닌 접근성을 위한 숨김텍스트를 제공할때 */
@@ -288,6 +288,18 @@ legend {
   padding: 30px 0;
 }
 
+.dimmed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+}
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -354,7 +366,6 @@ legend {
 @media screen and (min-width: 1280px) {
   #header {
     position: relative;
-    z-index: 9999;
   }
 }
 #gnb {
@@ -366,6 +377,7 @@ legend {
   transform: translateY(9px);
 }
 #gnb .label-menu .bar {
+  display: block;
   width: 30px;
   height: 3px;
   background: #000;
@@ -561,14 +573,91 @@ legend {
   display: flex;
 }
 .lang a {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 0 20px;
-  height: 90px;
+  height: 100px;
+  color: rgba(32, 32, 32, 0.7);
+}
+.lang a.active {
+  color: #202020;
+}
+.lang a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 20px;
+  background: #e0e0e0;
+}
+.lang a:first-child::before {
+  display: none;
 }
 
+.search-area .btn-search {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 0 10px;
+}
+.search-area .btn-search i {
+  font-size: 1.7rem;
+  transform: scaleX(-1);
+}
 .search-area .layer-search {
   display: none;
+}
+.search-area .search-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: #fff;
+}
+.search-area .search-box .form-search {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 10px 0 30px;
+  border: 2px solid #445ded;
+  border-radius: 62px;
+}
+.search-area .search-box .inp-search {
+  width: 600px;
+  padding: 20px 0;
+  border: none;
+  background-color: transparent;
+}
+.search-area .search-box .inp-search:focus {
+  outline: none;
+}
+.search-area .search-box .btn-submit {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #445ded;
+  color: #fff;
+  transform: scaleX(-1);
+  font-size: 1.2rem;
+}
+.search-area .search-box .btn-close {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background: #445ded;
+}
+.search-area .search-box .btn-close i {
+  color: #fff;
+  font-size: 2rem;
 }
 
 #main {

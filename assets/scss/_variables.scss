@@ -1,11 +1,13 @@
 // 변수 설정
-$txtDefult: #202020;
+
 $primary: #445ded;
 $secondary: #ff5722;
 
+$txtDefult: #202020;
+$blurTxt: rgba($txtDefult, 0.7);
+
 $white: #fff;
 $black: #000;
-$blurTxt: rgba($txtDefult, 0.7);
 
 $bgDefult: rgba($primary, 0.05);
 $linkDefult: #666;

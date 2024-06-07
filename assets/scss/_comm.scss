@@ -32,6 +32,16 @@
 .sec-g {
     padding: 30px 0;
 }
+.dimmed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: rgba($black, 0.3);
+    backdrop-filter: blur(30px);
+}
 
 // swiper
 .swiper {
@@ -99,7 +109,6 @@
 @media screen and (min-width: $breakpoint-xl) {
     #header {
         position: relative;
-        z-index: 9999;
     }
 }
 
@@ -110,6 +119,7 @@
         z-index: 1000;
         transform: translateY(9px);
         .bar {
+            display: block;
             width: 30px;
             height: 3px;
             background: $black;
@@ -327,15 +337,87 @@
 .lang {
     display: flex;
     a {
+        position: relative;
         display: flex;
         align-items: center;
         padding: 0 20px;
-        height: 90px;
+        height: $hdH-xl;
+        color: $blurTxt;
+        &.active {
+            color: $txtDefult;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 20px;
+            background: $gray-300;
+        }
+        &:first-child::before {
+            display: none;
+        }
     }
 }
 .search-area {
+    .btn-search {
+        @include flexitems;
+        height: $hdH-xl;
+        padding: 0 10px;
+        i {
+            font-size: 1.7rem;
+            transform: scaleX(-1);
+        }
+    }
     .layer-search {
         display: none;
+    }
+    .search-box {
+        position: relative;
+        @include flexCenter;
+        height: 300px;
+        background: $white;
+        .form-search {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 0 10px 0 30px;
+            border: 2px solid $primary;
+            border-radius: 62px;
+        }
+        .inp-search {
+            width: 600px;
+            padding: 20px 0;
+            border: none;
+            background-color: transparent;
+            &:focus {
+                outline: none;
+            }
+        }
+        .btn-submit {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: $primary;
+            color: $white;
+            transform: scaleX(-1);
+            font-size: 1.2rem;
+        }
+        .btn-close {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            @include flexCenter;
+            width: 70px;
+            height: 70px;
+            background: $primary;
+            i {
+                color: $white;
+                font-size: 2rem;
+            }
+        }
     }
 }
 // main

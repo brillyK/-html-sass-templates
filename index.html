@@ -45,9 +45,9 @@
                     <nav id="gnb">
                         <input type="checkbox" name="btnMenu" id="btnMenu" class="blind" />
                         <label for="btnMenu" class="label-menu">
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
                             <span class="blind">전체메뉴 보기</span>
                         </label>
                         <div class="menu-wrap">
@@ -56,7 +56,7 @@
                                 <a href="#">ENG</a>
                             </div>
                             <div class="top-menu">
-                                <!-- mobail 메뉴 클릭 시 .active 추가 -->
+                                <!-- mobile 메뉴 클릭시 .active 추가 -->
                                 <dl class="">
                                     <dt>
                                         <a href="#">menu1</a>
@@ -102,18 +102,35 @@
                     </nav>
                     <div class="util">
                         <div class="lang">
-                            <a href="#">KOR</a>
+                            <a href="#" class="active">KOR</a>
                             <a href="#">ENG</a>
                         </div>
                         <div class="search-area">
                             <button class="btn-search">
+                                <i class="las la-search"></i>
                                 <span class="blind">검색창 열기</span>
                             </button>
-                            <div class="layer-search">
-                                <form action="">
-                                    <input type="search" name="search" id="search" placeholder="검색어를 입력하세요" />
-                                    <button type="submit">검색</button>
-                                </form>
+                            <div class="layer-search dimmed">
+                                <div class="search-box">
+                                    <form class="form-search">
+                                        <input
+                                            type="search"
+                                            name="search"
+                                            id="search"
+                                            class="inp-search"
+                                            title="검색어를 입력하세요"
+                                            placeholder="검색어를 입력하세요"
+                                        />
+                                        <button type="submit" class="btn-submit">
+                                            <i class="las la-search"></i>
+                                            <span class="blind">검색</span>
+                                        </button>
+                                    </form>
+                                    <button class="btn-close">
+                                        <i class="las la-times"></i>
+                                        <span class="blind">검색창 닫기</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -247,7 +264,7 @@
             <footer id="footer">
                 <div class="footer_cont clearfix pc-foot container">
                     <div class="footer_left">
-                        <img src="./images/footer_logo.png" alt="NAVER Cloud" />
+                        <img src="/static/images/footer_logo.png" alt="NAVER Cloud" />
                         <div class="copyright_txt">
                             <p>
                                 사업자등록번호 : 129-86-31394&nbsp;&nbsp;&nbsp;&nbsp;통신판매업신고번호 :
@@ -298,7 +315,7 @@
                     </div>
                 </div>
                 <div class="footer_cont clfix mo-foot">
-                    <img class="logo" src="./images/footer_logo.png" alt="NAVER Cloud" />
+                    <img class="logo" src="/static/images/footer_logo.png" alt="NAVER Cloud" />
                     <div class="copyright_txt top">
                         <p class="en">ⓒ NAVER Cloud Corp. All Rights Reserved.</p>
                     </div>
