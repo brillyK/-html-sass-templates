@@ -108,7 +108,14 @@
 }
 @media screen and (min-width: $breakpoint-xl) {
     #header {
-        position: relative;
+        &.bg-w {
+            * {
+                color: $black;
+            }
+        }
+        * {
+            color: $white;
+        }
     }
 }
 

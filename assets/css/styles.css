@@ -364,8 +364,11 @@ legend {
 }
 
 @media screen and (min-width: 1280px) {
-  #header {
-    position: relative;
+  #header.bg-w * {
+    color: #000;
+  }
+  #header * {
+    color: #fff;
   }
 }
 #gnb {
